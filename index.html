@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You 💌 Happy Valentine's Day</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <!-- Music Visualizer -->
+    <div class="music-visualizer" id="visualizer">
+        <canvas id="visualizerCanvas"></canvas>
+    </div>
+
+    <!-- Audio Background -->
+    <audio id="bgMusic" loop>
+        <source src="audio/song.m4a" type="audio/mp4">
+    </audio>
+
+
+
+    <!-- Floating Particles Background -->
+    <div class="particles-container">
+        <canvas id="particlesCanvas"></canvas>
+    </div>
+
+    <!-- Landing Section -->
+    <section id="landing" class="active">
+        <div class="landing-wrapper">
+            <div class="envelope-container">
+                <div class="envelope">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body"></div>
+                    <div class="heart-popup">💝</div>
+                </div>
+            </div>
+            
+            <div class="landing-text">
+                <h1 class="main-title">Happy Valentine's Day</h1>
+                <p class="main-subtitle">For my pretty girl</p>
+                <p class="valentine-date"> 2026 💚</p>
+            </div>
+
+            <button class="enter-button" onclick="enterGarden()">
+                <span class="button-icon">💝💌💝</span>
+            </button>
+        </div>
+    </section>
+
+
+    <section id="garden">
+        <div class="garden-wrapper">
+         
+            <header class="garden-header">
+                <h2 class="garden-title">My Love Letters for You</h2>
+                <p class="garden-description">Setiap foto menyimpan keindahan dirimu</p>
+            </header>
+
+            
+            <div class="letters-grid">
+                <!-- Letter 1 -->
+                <article class="letter-card" data-letter="1">
+                    <div class="letter-envelope" onclick="openLetter(1)">
+                        <div class="letter-stamp">💕</div>
+                        <div class="letter-address">
+                            <p>To: My Love</p>
+                            <p>From: Your Forever</p>
+                        </div>
+                        <div class="letter-seal">💌</div>
+                    </div>
+                    
+                    <div class="letter-content" id="letter-1">
+                        <div class="polaroid-photo">
+                            <img src="images/foto1.jpeg" alt="Our Memory 1">
+                            <p class="photo-caption">Keberadaan dirimu yang selalu membuatku bahagia</p>
+                        </div>
+                        <div class="letter-text">
+                            <p class="letter-message">Setiap kali melihat kamu, dunia terasa lebih indah.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Letter 2 -->
+                <article class="letter-card" data-letter="2">
+                    <div class="letter-envelope" onclick="openLetter(2)">
+                        <div class="letter-stamp">💕</div>
+                        <div class="letter-address">
+                            <p>To: My Love</p>
+                            <p>From: Your Forever</p>
+                        </div>
+                        <div class="letter-seal">💌</div>
+                    </div>
+                    
+                    <div class="letter-content" id="letter-2">
+                        <div class="polaroid-photo">
+                            <img src="images/foto2.jpeg" alt="Our Memory 2">
+                            <p class="photo-caption">Cantikmu yang tak pernah pudar</p>
+                        </div>
+                        <div class="letter-text">
+                            <p class="letter-message">Kecantikanmu bukan hanya dari luar, tapi dari hati yang tulus dan jiwa yang indah.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Letter 3 -->
+                <article class="letter-card" data-letter="3">
+                    <div class="letter-envelope" onclick="openLetter(3)">
+                        <div class="letter-stamp">💕</div>
+                        <div class="letter-address">
+                            <p>To: My Love</p>
+                            <p>From: Your Forever</p>
+                        </div>
+                        <div class="letter-seal">💌</div>
+                    </div>
+                    
+                    <div class="letter-content" id="letter-3">
+                        <div class="polaroid-photo">
+                            <img src="images/foto3.jpeg" alt="Our Memory 3">
+                            <p class="photo-caption">Suaramu, melodi favoritku.</p>
+                        </div>
+                        <div class="letter-text">
+                            <p class="letter-message">Suaramu adalah melodi yang tak pernah bosan kudengar, bahkan dalam diam.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Letter 4 -->
+                <article class="letter-card" data-letter="4">
+                    <div class="letter-envelope" onclick="openLetter(4)">
+                        <div class="letter-stamp">💕</div>
+                        <div class="letter-address">
+                            <p>To: My Love</p>
+                            <p>From: Your Forever</p>
+                        </div>
+                        <div class="letter-seal">💌</div>
+                    </div>
+                    
+                    <div class="letter-content" id="letter-4">
+                        <div class="polaroid-photo">
+                            <img src="images/foto4.jpeg" alt="Our Memory 4">
+                            <p class="photo-caption">Kamu adalah alasan ku tersenyum</p>
+                        </div>
+                        <div class="letter-text">
+                            <p class="letter-message">Jika hidup adalah perjalanan panjang, maka aku ingin berjalan di sampingmu, tanpa tergesa, tanpa ragu.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Letter 5 -->
+                <article class="letter-card" data-letter="5">
+                    <div class="letter-envelope" onclick="openLetter(5)">
+                        <div class="letter-stamp">💕</div>
+                        <div class="letter-address">
+                            <p>To: My Love</p>
+                            <p>From: Your Forever</p>
+                        </div>
+                        <div class="letter-seal">💌</div>
+                    </div>
+                    
+                    <div class="letter-content" id="letter-5">
+                        <div class="polaroid-photo">
+                            <img src="images/foto5.jpeg" alt="Our Memory 5">
+                            <p class="photo-caption">Walaupun jauh, kamu tetap dekat di hati</p>
+                        </div>
+                        <div class="letter-text">
+                            <p class="letter-message">Kamu adalah bagian terbaik dari setiap rencanaku tentang masa depan.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Letter 6 -->
+                <article class="letter-card" data-letter="6">
+                    <div class="letter-envelope" onclick="openLetter(6)">
+                        <div class="letter-stamp">💕</div>
+                        <div class="letter-address">
+                            <p>To: My Love</p>
+                            <p>From: Your Forever</p>
+                        </div>
+                        <div class="letter-seal">💌</div>
+                    </div>
+                    
+                    <div class="letter-content" id="letter-6">
+                        <div class="polaroid-photo">
+                            <img src="images/foto6.jpeg" alt="Our Memory 6">
+                            <p class="photo-caption">I always miss you</p>
+                        </div>
+                        <div class="letter-text">
+                            <p class="letter-message">Jika suatu hari aku harus memilih satu hal untuk kusimpan selamanya, aku akan memilih kenangan bersamamu.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Letter 7 (NEW) -->
+                <article class="letter-card" data-letter="7">
+                    <div class="letter-envelope" onclick="openLetter(7)">
+                        <div class="letter-stamp">💕</div>
+                        <div class="letter-address">
+                            <p>To: My Love</p>
+                            <p>From: Your Forever</p>
+                        </div>
+                        <div class="letter-seal">💌</div>
+                    </div>
+                    
+                    <div class="letter-content" id="letter-7">
+                        <div class="polaroid-photo">
+                            <img src="images/foto7.jpeg" alt="Our Memory 7">
+                            <p class="photo-caption">Everytime with you</p>
+                        </div>
+                        <div class="letter-text">
+                            <p class="letter-message">Aku ingin menjadi alasan di balik senyummu, seperti kamu yang selalu menjadi alasan bahagiaku.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Letter 8 (NEW) -->
+                <article class="letter-card" data-letter="8">
+                    <div class="letter-envelope" onclick="openLetter(8)">
+                        <div class="letter-stamp">💕</div>
+                        <div class="letter-address">
+                            <p>To: My Love</p>
+                            <p>From: Your Forever</p>
+                        </div>
+                        <div class="letter-seal">💌</div>
+                    </div>
+                    
+                    <div class="letter-content" id="letter-8">
+                        <div class="polaroid-photo">
+                            <img src="images/foto8.jpeg" alt="Our Memory 8">
+                            <p class="photo-caption">Cinta yang takkan pernah pudar</p>
+                        </div>
+                        <div class="letter-text">
+                            <p class="letter-message">Cintaku padamu akan terus tumbuh, hari ini, besok, dan selamanya.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Photo Gallery with Poetry -->
+            <div class="poetry-gallery-section">
+                <div class="poetry-header">
+                    <h2 class="poetry-title">I Love You</h2>
+                    <p class="poetry-subtitle">Every picture tells that you are my love</p>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-delay="0.1">
+                        <div class="gallery-frame">
+                            <img src="images/foto.jpeg" alt="Memory 1" class="image" style="display:block; margin:0 auto;" >
+                            <div class="gallery-overlay">
+                                <p class="overlay-text">Your smile lights up my world</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Poetry Section -->
+                <div class="poetry-content">
+                    <div class="poem">
+                        <p class="poem-line">Di setiap foto tersimpan kenangan indah,</p>
+                        <p class="poem-line">Senyummu yang takkan pernah pudar.</p>
+                        <p class="poem-line">Meski waktu terus melangkah menjauh,</p>
+                        <p class="poem-line">Bayangmu tetap hangat di dalam ingatanku.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Love Letter -->
+            <div class="main-love-letter">
+                <div class="letter-paper">
+                    <div class="paper-header">
+                        <div class="paper-decoration">🌹</div>
+                        <h3>Surat Cinta Untukmu</h3>
+                        <div class="paper-decoration">🌹</div>
+                    </div>
+                    <div class="paper-body">
+    <p class="letter-opening">For My Lovely One,</p>
+    
+    <p class="letter-paragraph">
+        HAII KAMUUU!!!  my pretty lovely girl 💐 <br>
+
+        Kamu tahu? Every time I see you, I always feel happy. <br>
+        Like… look at my adorable, beautiful girl. <br>
+
+        I love you so much. <br>
+        Rasanya dunia langsung jadi lebih ringan cuma karena lihat senyummu. <br>
+
+        Aku harap kehadiranku bisa membuat harimu sedikit lebih baik, <br>
+        sedikit lebih hangat, dan jauh lebih bahagia. <br>
+
+        Because if I can be even a small reason behind your smile, <br>
+        that would already mean everything to me. <br>
+
+        My dear… I’m so proud of you. <br>
+        For everything you do.
+        For how strong you are. 
+        For how you keep going even when things get hard. 
+
+        And I love everything about you — <br>
+        the way you think, <br>
+        the way you talk, <br>
+        the way you care, <br>
+        even the little things you mungkin anggap biasa saja… <br>
+        but to me, they are extraordinary.
+    </p>
+    
+    <p class="letter-paragraph">
+        Aku tahu bagaimana dunia memperlakukanmu. <br>
+        I know it’s not always kind. <br>
+
+        Kadang capek. <br>
+        Kadang berat. <br>
+        Kadang terasa tidak adil. <br>
+
+        But no matter how exhausting it gets, please remember this — <br>
+
+        I will always be the first one to support you. <br>
+        I will stand beside you when you walk. <br>
+        Run with you when you chase your dreams. <br>
+        And hold you when you feel like you can’t move anymore. <br>
+
+        I’ll help you reach everything you desire. <br>
+        Everything for you, sweetheart.
+    </p>
+    
+    <p class="letter-paragraph">
+        Honestly… <br>
+        di hari Valentine ini aku tidak terlalu memikirkannya. 
+        I didn’t even plan to celebrate it. 
+
+        But today, I choose to celebrate you. 
+
+        Because for me, Valentine is not about flowers or fancy things — <br>
+        it’s about the person who makes my heart feel full.
+
+        And that person is you, <br>
+        my pretty princess.
+    </p>
+
+    <p class="letter-paragraph">
+        And there’s something important I want to say. <br>
+
+        You know that I love you… <br>
+        and I know we love each other. <br>
+
+        But sometimes it feels strange, doesn’t it? 
+        We care this deeply, <br>
+        yet we don’t have a clear name for what we are. <br>
+
+        Rasanya seperti dua hati yang sudah saling menemukan, <br>
+        tapi belum berani mengikat janji. <br>
+
+        So… my dear — <br>
+
+        Let me be your last one. <br>
+        Let me be your light every time you’re feeling down. <br>
+        Let me be your home when the world feels too loud. <br><br>
+
+        Let me stay — <br>
+        not just for today, 
+        not just for Valentine’s Day,
+        but for every ordinary day after this. <br>
+
+        Devita… would you be mine, forever and ever? 💗
+    </p>
+
+    <div class="letter-signature">
+        <p class="signature-text">with all of my love,</p>
+        <p class="signature-name">yours forever</p>
+        <div class="signature-heart">💝</div>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+
+            <!-- Footer Quote -->
+            <div class="footer-quote">
+                <p class="quote-text">"Loving you feels like finding the missing piece I never knew I needed."</p>
+                <p class="quote-author">- Ayesha</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Modal -->
+    <div id="photoModal" class="modal">
+        <button class="modal-close" onclick="closeModal()">
+            <span>✕</span>
+        </button>
+        <div class="modal-content-wrapper">
+            <div class="modal-polaroid">
+                <img class="modal-image" id="modalImg" alt="Photo">
+                <p class="modal-caption" id="modalCaption"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
